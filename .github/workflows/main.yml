@@ -22,7 +22,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
-      #- name: Checkout
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: delete content
@@ -30,11 +29,6 @@ jobs:
       - name: Setup Leiningen
         uses: oxr463/setup-leiningen@0.0.1
         with:
-          exec: lein run
-      # Runs a set of commands using the runners shell
-      #- name: rebuild static site
-      #  run: mv public docs
-        # run: |
-        #  rm -rf docs
-        #  lein run
-        #  mv public docs
+          exec: lein run      
+      - name: rebuild static site
+        run: mv public docs
